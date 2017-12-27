@@ -47,7 +47,7 @@
 
 + (instancetype)makeRequestWithURL:(NSString *)url parameters:(NSDictionary *)parameters success:(Success)success fail:(Failure)fail startImediately:(BOOL)startImediately {
     static NSUInteger requestID = 0;
-    XRequest *request = [[XRequest alloc] init];
+    XRequest *request = [[self alloc] init];
     request.url = url;
     request.parameters = parameters;
     request.success = success;

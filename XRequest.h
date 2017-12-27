@@ -33,6 +33,10 @@ typedef void(^Failure)(NSError *e);
 + (instancetype)GET:(NSString *)url parameters:(NSDictionary *)parameters success:(Success)success fail:(Failure)fail;
 + (instancetype)POST:(NSString *)url parameters:(NSDictionary *)parameters success:(Success)success fail:(Failure)fail;
 
++ (instancetype)makeRequestWithURL:(NSString *)url parameters:(NSDictionary *)parameters success:(Success)success fail:(Failure)fail startImediately:(BOOL)startImediately;
+
+- (void)analysisResponse:(id)responseObject;
+- (void)failCallBackWithError:(NSError *)error;
 //创建请求，但是不执行，需要调用start执行
 + (instancetype)GET:(NSString *)url
          parameters:(NSDictionary *)parameters
